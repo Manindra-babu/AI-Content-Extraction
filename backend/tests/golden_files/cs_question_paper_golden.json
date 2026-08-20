@@ -1,0 +1,44 @@
+{
+  "exam_name": "Mid-Term Examination 2024",
+  "subject_name": "Database Management Systems",
+  "year": 2024,
+  "total_marks": 50.0,
+  "duration_minutes": 120,
+  "questions": [
+    {
+      "id": "q_golden_1a",
+      "question_number": "1(a)",
+      "section": "Section A",
+      "text": "Explain Entity-Relationship model with suitable diagram.",
+      "sub_questions": [],
+      "marks": 5.0,
+      "question_type": "long_answer",
+      "topic_hint": "ER Modeling",
+      "linked_topic_id": "top_1_1",
+      "bloom_level": "understand",
+      "has_diagram": true,
+      "has_table": false,
+      "options": null,
+      "source_page": 1,
+      "source_document_id": "golden_qp_001"
+    },
+    {
+      "id": "q_golden_2a",
+      "question_number": "2(a)",
+      "section": "Section B",
+      "text": "Compute 3NF decomposition for schema R(A,B,C,D) with functional dependencies F={A->B, B->C}.",
+      "sub_questions": [],
+      "marks": 10.0,
+      "question_type": "numerical",
+      "topic_hint": "Normalization",
+      "linked_topic_id": "top_3_2",
+      "bloom_level": "apply",
+      "has_diagram": false,
+      "has_table": true,
+      "options": null,
+      "source_page": 2,
+      "source_document_id": "golden_qp_001"
+    }
+  ],
+  "extraction_confidence": 0.94
+}

@@ -1,0 +1,46 @@
+{
+  "program_name": "B.Tech Computer Science and Engineering",
+  "semester_or_year": "Semester V",
+  "subjects": [
+    {
+      "id": "subj_cs501",
+      "code": "CS501",
+      "name": "Database Management Systems",
+      "total_credits": 4.0,
+      "units": [
+        {
+          "id": "unit_1",
+          "unit_number": 1,
+          "title": "UNIT I: Introduction & Relational Data Model",
+          "credit_hours": 8.0,
+          "learning_outcomes": [
+            {
+              "code": "CO1",
+              "description": "Understand basic DBMS architecture and ER diagramming."
+            }
+          ],
+          "topics": [
+            {
+              "id": "top_1_1",
+              "title": "ER Modeling",
+              "estimated_hours": 4.0,
+              "subtopics": [
+                {
+                  "id": "top_1_1_1",
+                  "title": "Entities, Attributes, and Relationships",
+                  "subtopics": [],
+                  "estimated_hours": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "reference_books": [
+        "Database System Concepts by Silberschatz, Korth, Sudarshan"
+      ]
+    }
+  ],
+  "source_document_id": "golden_syl_001",
+  "extraction_confidence": 0.95
+}

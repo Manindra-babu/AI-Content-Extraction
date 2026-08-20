@@ -1,0 +1,12 @@
+{
+  "name": "wml-ai-content-extraction-service-root",
+  "private": true,
+  "version": "1.0.0",
+  "description": "WML AI Content Extraction Services Platform",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "preview": "npm --prefix frontend run preview",
+    "test:backend": "cd backend && python -m pytest tests"
+  }
+}
