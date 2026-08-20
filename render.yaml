@@ -37,9 +37,9 @@ services:
       - key: GROQ_API_KEY
         sync: false
       - key: OPENAI_API_KEY
-        sync: false
+        value: ""
       - key: GEMINI_API_KEY
-        sync: false
+        value: ""
       - key: STORAGE_BACKEND
         value: local
       - key: VALID_API_KEYS
@@ -75,15 +75,9 @@ services:
           name: content-extraction-api
           envVarKey: GROQ_API_KEY
       - key: OPENAI_API_KEY
-        fromService:
-          type: web
-          name: content-extraction-api
-          envVarKey: OPENAI_API_KEY
+        value: ""
       - key: GEMINI_API_KEY
-        fromService:
-          type: web
-          name: content-extraction-api
-          envVarKey: GEMINI_API_KEY
+        value: ""
       - key: STORAGE_BACKEND
         value: local
 
