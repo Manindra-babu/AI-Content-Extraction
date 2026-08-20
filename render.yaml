@@ -108,5 +108,5 @@ services:
 databases:
   - name: content-extraction-db
     databaseName: content_extraction
-    user: postgres
+    user: content_user
     plan: free
