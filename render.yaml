@@ -96,7 +96,7 @@ services:
         fromService:
           type: web
           name: content-extraction-api
-          property: url
+          property: host
 
   # 4. Redis Cache / Message Broker
   - type: redis
