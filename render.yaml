@@ -1,8 +1,8 @@
 # Render Blueprint Infrastructure Specification (render.yaml)
-# Project: AI Content Extraction Services (WML)
+# Project: AI Content Extraction Services (WML - Free Plan Compatible)
 
 services:
-  # 1. FastAPI REST API Service
+  # 1. FastAPI REST API Service (Runs both API & Celery Worker for Free Tier Compatibility)
   - type: web
     name: content-extraction-api
     env: docker
@@ -45,43 +45,7 @@ services:
       - key: VALID_API_KEYS
         value: '["wml_dev_key_2026","wml_live_8f3a912b"]'
 
-  # 2. Celery Background Worker Service
-  - type: worker
-    name: content-extraction-worker
-    env: docker
-    dockerfilePath: infra/backend.Dockerfile
-    dockerContext: .
-    plan: free
-    dockerCommand: celery -A app.worker.celery_app worker --loglevel=info
-    envVars:
-      - key: ENVIRONMENT
-        value: production
-      - key: DATABASE_URL
-        fromDatabase:
-          name: content-extraction-db
-          property: connectionString
-      - key: REDIS_URL
-        fromService:
-          type: redis
-          name: content-extraction-redis
-          property: connectionString
-      - key: LLM_PROVIDER
-        value: groq
-      - key: LLM_MODEL
-        value: llama-3.3-70b-versatile
-      - key: GROQ_API_KEY
-        fromService:
-          type: web
-          name: content-extraction-api
-          envVarKey: GROQ_API_KEY
-      - key: OPENAI_API_KEY
-        value: ""
-      - key: GEMINI_API_KEY
-        value: ""
-      - key: STORAGE_BACKEND
-        value: local
-
-  # 3. React Frontend Admin Dashboard (Static Site)
+  # 2. React Frontend Admin Dashboard (Static Site - Free)
   - type: web
     name: content-extraction-frontend
     env: static
@@ -94,13 +58,13 @@ services:
           name: content-extraction-api
           property: host
 
-  # 4. Redis Cache / Message Broker
+  # 3. Redis Cache / Message Broker (Free)
   - type: redis
     name: content-extraction-redis
     ipAllowList: [] # Allow internal connections only
     plan: free
 
-# 5. Managed PostgreSQL Database
+# 4. Managed PostgreSQL Database (Free)
 databases:
   - name: content-extraction-db
     databaseName: content_extraction
