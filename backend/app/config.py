@@ -17,6 +17,15 @@ class Settings(BaseSettings):
     POSTGRES_PORT: int = 5432
     DATABASE_URL: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/content_extraction"
 
+    @property
+    def NORMALIZED_DATABASE_URL(self) -> str:
+        url = self.DATABASE_URL
+        if url.startswith("postgres://"):
+            return url.replace("postgres://", "postgresql+asyncpg://", 1)
+        if url.startswith("postgresql://") and not url.startswith("postgresql+asyncpg://"):
+            return url.replace("postgresql://", "postgresql+asyncpg://", 1)
+        return url
+
     # Redis / Celery
     REDIS_HOST: str = "localhost"
     REDIS_PORT: int = 6379
