@@ -1,4 +1,7 @@
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+let BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').trim();
+if (BASE_URL && !BASE_URL.startsWith('http://') && !BASE_URL.startsWith('https://')) {
+  BASE_URL = `https://${BASE_URL}`;
+}
 const API_BASE_URL = BASE_URL ? `${BASE_URL.replace(/\/$/, '')}/v1` : '/v1';
 const DEV_API_KEY = import.meta.env.VITE_API_KEY || 'wml_dev_key_2026';
 

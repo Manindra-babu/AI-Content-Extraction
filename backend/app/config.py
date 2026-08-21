@@ -49,11 +49,7 @@ class Settings(BaseSettings):
     S3_BUCKET_NAME: str = "wml-content-extraction"
 
     # CORS
-    CORS_ORIGINS: List[str] = [
-        "http://localhost:3000",
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-    ]
+    CORS_ORIGINS: List[str] = ["*"]
 
     model_config = SettingsConfigDict(
         env_file=(".env", "../.env"),
