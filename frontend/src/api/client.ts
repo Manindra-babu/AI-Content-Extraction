@@ -1,5 +1,6 @@
-const API_BASE_URL = '/v1';
-const DEV_API_KEY = 'wml_dev_key_2026';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+const API_BASE_URL = BASE_URL ? `${BASE_URL.replace(/\/$/, '')}/v1` : '/v1';
+const DEV_API_KEY = import.meta.env.VITE_API_KEY || 'wml_dev_key_2026';
 
 export interface HealthResponse {
   status: string;
